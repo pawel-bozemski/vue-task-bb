@@ -1,36 +1,42 @@
 <script setup>
-// defineProps({
-//   msg: {
-//     type: String,
-//     required: true,
-//   },
-// });
+import ProductDay from "./ProductDay.vue";
 </script>
 
 <template>
-  <div class="greetings">
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label"
-        >Email address</label
-      >
-      <input
-        type="email"
-        class="form-control"
-        id="exampleFormControlInput1"
-        placeholder="name@example.com"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Example textarea</label
-      >
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-      ></textarea>
+  <div class="row justify-content-center mt-5">
+    <div class="col-4">
+      <ProductDay />
     </div>
   </div>
+  <div></div>
 </template>
 
+<script>
+export default {
+  name: "ProductList",
+
+  data() {
+    return {
+      products: [],
+    };
+  },
+  mounted() {
+    this.fetchProducts();
+  },
+  methods: {
+    async fetchProducts() {
+      const response = await fetch("http://localhost:8082/products", {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          Accept: "*/*",
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      this.products = data;
+    },
+  },
+};
+</script>
 <style scoped></style>
