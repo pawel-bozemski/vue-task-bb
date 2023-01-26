@@ -10,7 +10,7 @@ defineProps({
 <template>
   <div class="card" style="width: 18rem">
     <img
-      :src="this.product.image"
+      :src="this.product.image + '?random' + Math.floor(Math.random() * 100)"
       class="card-img-top"
       :alt="this.product.name"
     />
@@ -64,3 +64,15 @@ defineProps({
   margin-left: 10px;
 }
 </style>
+<script>
+export default {
+  name: "ProductCard",
+
+  computed: {
+    url() {
+      const random = this.product.image;
+      return random;
+    },
+  },
+};
+</script>
