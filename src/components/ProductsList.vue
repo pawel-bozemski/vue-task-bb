@@ -1,11 +1,12 @@
 <script setup>
-import ProductDay from "./ProductDay.vue";
+import ProductDay from "./ProductCard.vue";
 </script>
 
 <template>
   <div class="row justify-content-center mt-5">
-    <div class="col-4">
-      <ProductDay />
+    <h2 class="text-center mb-3">Product of a day</h2>
+    <div class="col-3">
+      <ProductDay :product="this.productOfADay" />
     </div>
   </div>
   <div></div>
@@ -18,9 +19,10 @@ export default {
   data() {
     return {
       products: [],
+      productOfADay: [],
     };
   },
-  mounted() {
+  created() {
     this.fetchProducts();
   },
   methods: {
@@ -34,7 +36,9 @@ export default {
         },
       });
       const data = await response.json();
+      this.productOfADay = data["product-of-a-day"];
       this.products = data;
+      console.log(this.products);
     },
   },
 };
