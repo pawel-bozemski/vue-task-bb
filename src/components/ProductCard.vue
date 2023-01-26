@@ -15,7 +15,7 @@ defineProps({
       :alt="this.product.name"
     />
     <div class="card-body">
-      <h3 class="card-title">{{ this.product.name }}</h3>
+      <h5 class="card-title">{{ this.product.name }}</h5>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">

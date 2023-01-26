@@ -9,7 +9,16 @@ import ProductDay from "./ProductCard.vue";
       <ProductDay :product="this.productOfADay" />
     </div>
   </div>
-  <div></div>
+  <div class="row justify-content-center mt-5">
+    <h2 class="text-center mb-3">Best sales</h2>
+    <div
+      class="col-3 mt-3"
+      v-for="(bestSale, index) in this.bestSales"
+      :key="index"
+    >
+      <ProductDay :product="bestSale" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,6 +29,7 @@ export default {
     return {
       products: [],
       productOfADay: [],
+      bestSales: [],
     };
   },
   created() {
@@ -37,6 +47,7 @@ export default {
       });
       const data = await response.json();
       this.productOfADay = data["product-of-a-day"];
+      this.bestSales = data["best-sales"];
       this.products = data;
       console.log(this.products);
     },
