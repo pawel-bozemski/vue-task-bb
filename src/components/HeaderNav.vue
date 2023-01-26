@@ -6,13 +6,13 @@
       <a class="nav-link active" aria-current="page" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Product of a Day</a>
+      <a class="nav-link" href="#prodofday">Product of a Day</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Best Sales</a>
+      <a class="nav-link" href="#bestsales">Best Sales</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" tabindex="-1">Recomended</a>
+      <a class="nav-link" href="#recommended">Recomended</a>
     </li>
   </ul>
 </template>
