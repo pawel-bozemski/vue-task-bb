@@ -3,34 +3,36 @@ import ProductDay from "./ProductCard.vue";
 </script>
 
 <template>
-  <div class="row mt-5" id="prodofday" v-if="this.productOfADay.length !== 0">
-    <h2 class="text-center mb-3">Product of a day</h2>
-    <div class="col-3">
-      <ProductDay :product="this.productOfADay" />
+  <div>
+    <div class="row mt-5" id="prodofday" v-if="this.productOfADay.length !== 0">
+      <h2 class="text-center mb-3">Product of a day</h2>
+      <div class="col-3">
+        <ProductDay :product="this.productOfADay" />
+      </div>
     </div>
-  </div>
-  <div class="row mt-5" id="bestsales" v-if="this.bestSales.length !== 0">
-    <h2 class="text-center mb-3">Best sales</h2>
-    <div
-      class="col-3 mt-3"
-      v-for="(bestSale, index) in this.bestSales"
-      :key="index"
-    >
-      <ProductDay :product="bestSale" />
+    <div class="row mt-5" id="bestsales" v-if="this.bestSales.length !== 0">
+      <h2 class="text-center mb-3">Best sales</h2>
+      <div
+        class="col-3 mt-3"
+        v-for="(bestSale, index) in this.bestSales"
+        :key="index"
+      >
+        <ProductDay :product="bestSale" />
+      </div>
     </div>
-  </div>
-  <div
-    class="row justify-content-center mt-5"
-    id="recommended"
-    v-if="this.recomended.length !== 0"
-  >
-    <h2 class="text-center mb-3">Recomended for you</h2>
     <div
-      class="col-3 mt-3"
-      v-for="(recommended, index) in this.recomended"
-      :key="index"
+      class="row justify-content-center mt-5"
+      id="recommended"
+      v-if="this.recomended.length !== 0"
     >
-      <ProductDay :product="recommended" />
+      <h2 class="text-center mb-3">Recomended for you</h2>
+      <div
+        class="col-3 mt-3"
+        v-for="(recommended, index) in this.recomended"
+        :key="index"
+      >
+        <ProductDay :product="recommended" />
+      </div>
     </div>
   </div>
 </template>

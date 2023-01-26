@@ -42,12 +42,12 @@ defineProps({
       <li class="list-group-item" v-if="this.product.price.current">
         Price
         <span style="text-decoration: line-through"
-          >${{ this.product.price.regular }}</span
+          >${{ this.product.price.regular / 100 }}</span
         >
-        <strong> ${{ this.product.price.current }}</strong>
+        <strong> ${{ this.product.price.current / 100 }}</strong>
       </li>
       <li class="list-group-item" v-else>
-        Price <strong>${{ this.product.price.regular }}</strong>
+        Price <strong>${{ this.product.price.regular / 100 }}</strong>
       </li>
       <li class="list-group-item">
         Rating
