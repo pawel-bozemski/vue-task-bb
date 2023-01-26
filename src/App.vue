@@ -1,15 +1,18 @@
 <script setup>
 import ProductsList from "./components/ProductsList.vue";
-import HeaderNav from "./components/HeaderNav.vue";
+import NavBar from "./components/NavBar.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" id="top">
     <header>
-      <HeaderNav />
+      <NavBar />
     </header>
     <ProductsList />
   </div>
+  <footer>
+    <NavBar />
+  </footer>
 </template>
 
 <style scoped></style>
